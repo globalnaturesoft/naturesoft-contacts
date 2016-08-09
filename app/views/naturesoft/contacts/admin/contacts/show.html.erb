@@ -1,0 +1,50 @@
+<% title "<i class=\"icon-user-tie\" style=\"font-size:22px\"></i> ".html_safe + @contact.first_name + @contact.last_name %>
+
+<div class="page_actions">
+    <%= link_to "#{t(:back)}<i class=\"icon-arrow-left16 position-right\"></i>".html_safe, naturesoft_contacts.admin_contacts_path, class: "btn btn-primary"%>
+    <%= link_to ("#{t(:Edit_contact)}" + '<i class="icon-pencil position-right"></i>').html_safe, naturesoft_contacts.edit_admin_contact_path(@contact), class: 'btn btn-primary' %>
+</div>
+<br />
+<form action="#" class="form-horizontal">
+    <div class="panel panel-flat">
+
+        <div class="panel-body">
+            <div class="col-md-6">
+                <div class="form_fix">
+                    <label class="col-md-3">Full Name:</label>
+                    <label class="col-md-9 text-semibold">Nguyễn Tôn Hùng</label>
+                </div>
+                
+                <div class="form_fix">
+                    <label class="col-md-3">Address:</label>
+                    <label class="col-md-9 text-semibold">188 Đường số 1, Phường 16, Gò Vấp, TPHCM</label>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="form_fix">
+                    <label class="col-md-3">Email:</label>
+                    <label class="col-md-9 text-semibold">hungnt@hoangkhang.com.vn</label>
+                </div>
+                
+                <div class="form_fix">
+                    <label class="col-md-3">Phone No.:</label>
+                    <label class="col-md-9 text-semibold">0963238714</label>
+                </div>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div class="col-lg-12">
+                <label class="col-lg-2">Subject:</label>
+                <label class="col-lg-10 text-semibold">Gửi thông tin liên hệ</label>
+            </div>
+
+            <div class="col-lg-12">
+                <label class="col-lg-12">Message:</label>
+                <div class="col-lg-12">
+                    <textarea class="form-control" rows=5 cols=5 readonly>noi dung</textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
