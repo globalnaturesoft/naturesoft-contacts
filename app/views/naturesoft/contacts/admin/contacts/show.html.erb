@@ -12,37 +12,37 @@
             <div class="col-md-6">
                 <div class="form_fix">
                     <label class="col-md-3">Full Name:</label>
-                    <label class="col-md-9 text-semibold">Nguyễn Tôn Hùng</label>
+                    <label class="col-md-9 text-semibold"><%= @contact.first_name + @contact.last_name %></label>
                 </div>
                 
                 <div class="form_fix">
                     <label class="col-md-3">Address:</label>
-                    <label class="col-md-9 text-semibold">188 Đường số 1, Phường 16, Gò Vấp, TPHCM</label>
+                    <label class="col-md-9 text-semibold"><%= @contact.address %></label>
                 </div>
             </div>
             
             <div class="col-md-6">
                 <div class="form_fix">
                     <label class="col-md-3">Email:</label>
-                    <label class="col-md-9 text-semibold">hungnt@hoangkhang.com.vn</label>
+                    <label class="col-md-9 text-semibold"><%= @contact.email %></label>
                 </div>
                 
                 <div class="form_fix">
-                    <label class="col-md-3">Phone No.:</label>
-                    <label class="col-md-9 text-semibold">0963238714</label>
+                    <label class="col-md-3">Phone Number:</label>
+                    <label class="col-md-9 text-semibold"><%= @contact.phone %></label>
                 </div>
             </div>
         </div>
         <div class="panel-body">
             <div class="col-lg-12">
                 <label class="col-lg-2">Subject:</label>
-                <label class="col-lg-10 text-semibold">Gửi thông tin liên hệ</label>
+                <label class="col-lg-10 text-semibold"><%= @contact.subject %></label>
             </div>
 
             <div class="col-lg-12">
                 <label class="col-lg-12">Message:</label>
                 <div class="col-lg-12">
-                    <textarea class="form-control" rows=5 cols=5 readonly>noi dung</textarea>
+                    <textarea class="form-control" rows=5 cols=5 readonly><%= @contact.message %></textarea>
                 </div>
             </div>
         </div>
