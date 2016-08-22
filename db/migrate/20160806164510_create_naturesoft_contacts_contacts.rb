@@ -1,4 +1,4 @@
-class CreateNaturesoftContacts < ActiveRecord::Migration[5.0]
+class CreateNaturesoftContactsContacts < ActiveRecord::Migration[5.0]
   def change
     create_table :naturesoft_contacts_contacts do |t|
       t.string :first_name
