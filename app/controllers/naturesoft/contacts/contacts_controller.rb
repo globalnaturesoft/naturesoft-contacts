@@ -6,7 +6,6 @@ module Naturesoft
         #contact form send message
         if params[:contact].present?
             @contact = Naturesoft::Contacts::Contact.new(contact_params)
-            @contact.user = current_user
             respond_to do |format|
                 @contact.save
                 format.html { redirect_to controller: "contacts", action: "success" }

@@ -36,7 +36,6 @@ module Naturesoft
         # POST /contacts
         def create
           @contact = Contact.new(contact_params)
-          @contact.user = current_user
     
           if @contact.save
             redirect_to admin_contacts_path, notice: 'Contact was successfully created.'

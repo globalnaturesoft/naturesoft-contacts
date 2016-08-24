@@ -9,7 +9,6 @@ class CreateNaturesoftContactsContacts < ActiveRecord::Migration[5.0]
       t.text :message
       t.string :subject
       t.string :status, :default => "active"
-      t.references :user, references: :naturesoft_users, index: true
 
       t.timestamps
     end
