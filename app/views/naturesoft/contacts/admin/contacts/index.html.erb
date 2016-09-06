@@ -6,7 +6,7 @@
 <br />
 <form class="listing-form">
   
-  <div class="panel panel-flat">
+  <div class="panel panel-flat border-top-primary">
       <div class="panel-body filter-box">                
           <div class="row">
               <div class="col-md-3">
@@ -44,8 +44,8 @@
               <th>Email/Phone</th>
               <th><%= t(:address) %></th>
               <th><%= t(:message) %></th>
-              <th><%= t(:status) %></th>
               <th><%= t(:sent_date) %></th>
+              <th><%= t(:status) %></th>
               <th class="text-right"><%= t(:actions) %></th>
           </tr>
         </thead>
@@ -64,8 +64,8 @@
 							<td class="kq_search">
                 <%= contact.subject %><br /><i><%= contact.message %></i>
               </td>
-							<td><%= display_status(contact.status) %></td>
               <td><%= contact.created_at.strftime("%d/%m/%Y") %></td>
+							<td><%= display_status(contact.status) %></td>
               <td class="text-right">
                 <div class="btn-group">
 									<%= link_to '<i class="icon-point-right"></i>'.html_safe, naturesoft_contacts.admin_contact_path(contact), class: "btn bg-teal-400 btn-icon", title: "View detail" %>
