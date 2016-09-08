@@ -1,5 +1,6 @@
 module Naturesoft::Contacts
   class Contact < ApplicationRecord
+  validates :first_name, :email, :phone, :address, :subject, :message, presence: true
     
     def self.sort_by
       [
