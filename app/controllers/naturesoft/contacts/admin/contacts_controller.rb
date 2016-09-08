@@ -12,25 +12,24 @@ module Naturesoft
     
         # GET /contacts
         def index
-          @contacts = Contact.all.paginate(:page => params[:page], :per_page => 1)
+          @contacts = Contact.all.paginate(:page => params[:page], :per_page => 10)
         end
     
         # GET /contacts/1
         def show
-          add_breadcrumb @contact.first_name + @contact.last_name, naturesoft_contacts.new_admin_contact_path
+          add_breadcrumb @contact.email, naturesoft_contacts.new_admin_contact_path
           add_breadcrumb "Show"
         end
     
         # GET /contacts/new
         def new
           @contact = Contact.new
-          add_breadcrumb "New Contact", naturesoft_contacts.new_admin_contact_path
+          add_breadcrumb "New Contact", nil,  class: "active"
         end
     
         # GET /contacts/1/edit
         def edit
-          add_breadcrumb @contact.first_name + @contact.last_name, naturesoft_contacts.new_admin_contact_path
-          add_breadcrumb "Edit"
+          add_breadcrumb "Edit Contact", nil,  class: "active"
         end
     
         # POST /contacts
