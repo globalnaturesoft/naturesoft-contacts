@@ -1,4 +1,4 @@
-<% title "<i class=\"icon-user-tie\" style=\"font-size:22px\"></i> ".html_safe + @contact.first_name + @contact.last_name %>
+<% title "#{@contact.email}" %>
 
 <div class="page_actions">
     <%= link_to "#{t(:back)}<i class=\"icon-arrow-left16 position-right\"></i>".html_safe, naturesoft_contacts.admin_contacts_path, class: "btn btn-primary"%>
