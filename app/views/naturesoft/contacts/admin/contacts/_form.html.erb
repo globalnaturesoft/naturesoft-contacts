@@ -24,17 +24,17 @@
       <div class="row">
         <div class="col-md-6">
           <div class="form-group">
-            <label class="col-md-12 control-label" ><%= t(:first_name) %> <span class='text-danger'>*</span></label>
+            <label class="col-md-12 control-label" ><%= t(:first_name) %> </label>
             <div class="col-md-12">
-              <%= f.text_field :first_name, class: "form-control required", placeholder: "First name..." %>
+              <%= f.text_field :first_name, class: "form-control", placeholder: "First name..." %>
             </div>
           </div>
         </div>
         <div class="col-md-6">
           <div class="form-group">
-            <label class="col-md-12 control-label" ><%= t(:last_name) %> <span class='text-danger'>*</span></label>
+            <label class="col-md-12 control-label" ><%= t(:last_name) %> </label>
             <div class="col-md-12">
-              <%= f.text_field :last_name, class: "form-control required", placeholder: "Last name..." %>
+              <%= f.text_field :last_name, class: "form-control", placeholder: "Last name..." %>
             </div>
           </div>
         </div>
@@ -64,7 +64,7 @@
           <div class="form-group">
             <label class="col-md-12 control-label" ><%= t(:address) %> </label>
             <div class="col-md-12">
-              <%= f.text_field :address, class: "form-control required" %>
+              <%= f.text_field :address, class: "form-control" %>
             </div>
           </div>
         </div>
@@ -73,9 +73,9 @@
       <div class="row">
         <div class="col-md-12">
           <div class="form-group">
-            <label class="col-md-12 control-label" ><%= t(:subject) %> </label>
+            <label class="col-md-12 control-label" ><%= t(:company) %> </label>
             <div class="col-md-12">
-              <%= f.text_field :subject, class: "form-control required" %>
+              <%= f.text_field :company, class: "form-control" %>
             </div>
           </div>
         </div>
@@ -84,9 +84,9 @@
       <div class="row">
         <div class="col-md-12">
           <div class="form-group">
-            <label class="col-md-12 control-label" ><%= t(:message) %> </label>
+            <label class="col-md-12 control-label" ><%= t(:description) %> </label>
             <div class="col-md-12">
-              <%= f.text_area :message, class: "form-control required", style: "min-width:100%;max-width:100%" %>
+              <%= f.text_area :description, class: "form-control", style: "min-width:100%;max-width:100%" %>
             </div>
           </div>
         </div>
