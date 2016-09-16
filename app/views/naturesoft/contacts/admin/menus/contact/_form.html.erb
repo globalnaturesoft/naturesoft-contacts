@@ -2,7 +2,7 @@
     <div class="form-group">
         <label class="col-md-2 control-label" ><%= t(:contact_id) %> <span class='text-danger'>*</span></label>
         <div class="col-md-10">
-            <% selected = options_for_select([[contact.email,contact.id]],contact.id) if !contact.nil? %>
+            <% selected = options_for_select([[contact.display_contact_name,contact.id]],contact.id) if !contact.nil? %>
             <%= select_tag("params[id]",
               selected,
               {
