@@ -2,6 +2,8 @@ module Naturesoft
   module Contacts
     class ContactsController < Naturesoft::FrontendController
       def contact
+        #contact info
+        @contact_info = Naturesoft::Contacts::Contact.find(params[:id])
         
         #contact form send message
         if params[:contact].present?

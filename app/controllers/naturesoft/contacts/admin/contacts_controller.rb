@@ -57,6 +57,11 @@ module Naturesoft
           @contact.destroy
           render text: "Contact was successfully destroyed."
         end
+        
+        # GET /contacts/select2
+        def select2
+          render json: Contact.select2(params)
+        end
     
         private
           # Use callbacks to share common setup or constraints between actions.
@@ -66,7 +71,7 @@ module Naturesoft
     
           # Only allow a trusted parameter "white list" through.
           def contact_params
-            params.fetch(:contact, {}).permit(:first_name, :last_name, :email, :phone, :address, :subject, :message)
+            params.fetch(:contact, {}).permit(:first_name, :last_name, :email, :phone, :address, :subject, :message, :company, :description)
           end
       end
     end
