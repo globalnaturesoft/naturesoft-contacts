@@ -13,7 +13,7 @@ module Naturesoft
           respond_to do |format|
             if @contact.save
               Naturesoft::UserMailer.sending_email_contact(@contact, @contact_info).deliver_now
-              format.html { redirect_to contacts_path, notice: 'Tin nhắn đã được gửi thành công! Chúng tôi sẽ liên hệ lại cho bạn trong thời gian sớm nhất' }
+              format.html { redirect_to contacts_path, notice: 'Contact was successfully sended' }
             end
           end
         end
