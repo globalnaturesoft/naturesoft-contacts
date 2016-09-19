@@ -1,7 +1,10 @@
 module Naturesoft
   module Contacts
     class ContactsController < Naturesoft::FrontendController
-      before_action :set_contact, only: [:contact]
+      before_action :set_contact, only: [:contact, :send_message]
+      
+      def contact
+      end
       
       def send_message
         #contact form send message
@@ -9,6 +12,7 @@ module Naturesoft
           @contact = Naturesoft::Contacts::Contact.new(contact_params)
           respond_to do |format|
             if @contact.save
+              Naturesoft::UserMailer.sending_email_contact(@contact, @contact_info).deliver_now
               format.html { redirect_to contacts_path, notice: 'Tin nhắn đã được gửi thành công! Chúng tôi sẽ liên hệ lại cho bạn trong thời gian sớm nhất' }
             end
           end
