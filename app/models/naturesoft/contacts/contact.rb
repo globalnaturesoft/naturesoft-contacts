@@ -1,6 +1,6 @@
 module Naturesoft::Contacts
   class Contact < ApplicationRecord
-  validates :first_name, :email, :phone, :address, :subject, :message, presence: true
+  validates :email, :phone, presence: true
     
     def self.sort_by
       [
@@ -31,7 +31,7 @@ module Naturesoft::Contacts
       end
       
       # for sorting
-      sort_by = params[:sort_by].present? ? params[:sort_by] : ",' ',naturesoft_contacts_contacts.last_name"
+      sort_by = params[:sort_by].present? ? params[:sort_by] : "naturesoft_contacts_contacts.first_name, naturesoft_contacts_contacts.last_name"
       sort_orders = params[:sort_orders].present? ? params[:sort_orders] : "asc"
       records = records.order("#{sort_by} #{sort_orders}")
       
@@ -48,5 +48,25 @@ module Naturesoft::Contacts
       end
       return name
     end
+    
+    def display_contact_name
+      str = []
+      str << self.company if company.present?
+      str << self.first_name + " " + self.last_name if self.first_name.present? or self.last_name.present?
+      str << self.email if self.email.present?
+      return str.join(" / ")
+    end
+    
+    # data for select2 ajax
+    def self.select2(params)
+			items = self.search(params).order("email")
+			if params[:excluded].present?
+				items = items.where.not(id: params[:excluded].split(","))
+			end
+			options = [{"id" => "", "text" => "none"}]
+			options += items.map { |c| {"id" => c.id, "text" => c.display_contact_name} }
+			result = {"items" => options}
+		end
+    
   end
 end

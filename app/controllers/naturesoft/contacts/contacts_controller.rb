@@ -2,7 +2,13 @@ module Naturesoft
   module Contacts
     class ContactsController < Naturesoft::FrontendController
       def contact
+<<<<<<< HEAD
         @body_class = "category-page"
+=======
+        #contact info
+        @contact_info = Naturesoft::Contacts::Contact.find(params[:id])
+        
+>>>>>>> dd5c5719765d06680824658cc69d6cddc1b8f99f
         #contact form send message
         if params[:contact].present?
             @contact = Naturesoft::Contacts::Contact.new(contact_params)
