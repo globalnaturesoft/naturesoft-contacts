@@ -1,29 +1,35 @@
 module Naturesoft
   module Contacts
     class ContactsController < Naturesoft::FrontendController
+      before_action :set_contact, only: [:contact, :send_message]
+      
       def contact
-<<<<<<< HEAD
         @body_class = "category-page"
-=======
         #contact info
         @contact_info = Naturesoft::Contacts::Contact.find(params[:id])
-        
->>>>>>> dd5c5719765d06680824658cc69d6cddc1b8f99f
+      end
+      
+      def send_message
         #contact form send message
         if params[:contact].present?
-            @contact = Naturesoft::Contacts::Contact.new(contact_params)
-            respond_to do |format|
-                @contact.save
-                format.html { redirect_to controller: "contacts", action: "success" }
+          @contact = Naturesoft::Contacts::Contact.new(contact_params)
+          respond_to do |format|
+            if @contact.save
+              Naturesoft::UserMailer.sending_email_contact(@contact, @contact_info).deliver_now
+              format.html { redirect_to contacts_path, notice: 'Contact was successfully sended' }
             end
+          end
         end
       end
       
       private
-      # Never trust parameters from the scary internet, only allow the white list through.
-      def contact_params
-          params.require(:contact).permit(:first_name, :last_name, :email, :phone, :subject, :message)
-      end
+        def set_contact
+          @contact_info = Naturesoft::Contacts::Contact.find(params[:id])
+        end
+        # Never trust parameters from the scary internet, only allow the white list through.
+        def contact_params
+            params.require(:contact).permit(:first_name, :last_name, :email, :phone, :subject, :message)
+        end
     end
   end
 end
