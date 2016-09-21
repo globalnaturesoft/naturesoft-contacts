@@ -1,7 +1,6 @@
 class CreateNaturesoftContactsContacts < ActiveRecord::Migration[5.0]
   def change
     create_table :naturesoft_contacts_contacts do |t|
-      t.string :company
       t.string :first_name
       t.string :last_name
       t.string :email
@@ -9,7 +8,6 @@ class CreateNaturesoftContactsContacts < ActiveRecord::Migration[5.0]
       t.string :phone
       t.text :message
       t.string :subject
-      t.text :description
       t.string :status, :default => "active"
 
       t.timestamps
