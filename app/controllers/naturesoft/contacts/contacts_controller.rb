@@ -5,8 +5,6 @@ module Naturesoft
       
       def contact
         @body_class = "category-page"
-        #contact info
-        @contact_info = Naturesoft::Contacts::Contact.find(params[:id])
       end
       
       def send_message
