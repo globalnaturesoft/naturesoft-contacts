@@ -71,7 +71,9 @@ module Naturesoft
     
           # Only allow a trusted parameter "white list" through.
           def contact_params
-            params.fetch(:contact, {}).permit(:first_name, :last_name, :email, :phone, :address, :subject, :message, :company, :description)
+            params.fetch(:contact, {}).permit(:first_name, :last_name, :email, :phone, :address, :subject, :message, :description,
+                                              :company, :certificate_of_business_registration_no, :date_of_issue, :place_of_issue,
+                                              :phone_2, :email_2, :hotline_1, :hotline_2, :fax, :head_office, :branch_office)
           end
       end
     end

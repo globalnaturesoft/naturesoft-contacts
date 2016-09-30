@@ -21,80 +21,181 @@
 
     <%= form_for([naturesoft_contacts, :admin, contact], html: {class: "form-horizontal validate"}) do |f| %>
     
-      <div class="row">
-        <div class="col-md-6">
-          <div class="form-group">
-            <label class="col-md-12 control-label" ><%= t(:first_name) %> </label>
-            <div class="col-md-12">
-              <%= f.text_field :first_name, class: "form-control", placeholder: "First name..." %>
-            </div>
+      <div class="tabbable tab-content-bordered">
+          <ul class="nav nav-tabs bg-primary">
+              <li class="active"><a href="#control-tab1" data-toggle="tab"><%= t(:general) %></a></li>
+              <li><a href="#control-tab2" data-toggle="tab"><%= t(:others) %> </a></li>
+          </ul>
+          <div class="tab-content">
+              <div class="tab-pane has-padding active" id="control-tab1">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="col-md-12 control-label" ><%= t(:first_name) %> </label>
+                      <div class="col-md-12">
+                        <%= f.text_field :first_name, class: "form-control", placeholder: "First name..." %>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="col-md-12 control-label" ><%= t(:last_name) %> </label>
+                      <div class="col-md-12">
+                        <%= f.text_field :last_name, class: "form-control", placeholder: "Last name..." %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="col-md-12 control-label" ><%= t(:email) %> <span class='text-danger'>*</span></label>
+                      <div class="col-md-12">
+                        <%= f.text_field :email, class: "form-control required" %>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="col-md-12 control-label" ><%= t(:phone) %> <span class='text-danger'>*</span></label>
+                      <div class="col-md-12">
+                        <%= f.text_field :phone, class: "form-control required" %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label class="col-md-12 control-label" ><%= t(:address) %> </label>
+                      <div class="col-md-12">
+                        <%= f.text_field :address, class: "form-control" %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label class="col-md-12 control-label" ><%= t(:description) %> </label>
+                      <div class="col-md-12">
+                        <%= f.text_area :description, class: "form-control", style: "min-width:100%;max-width:100%" %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+                
+              <div class="tab-pane has-padding" id="control-tab2">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="col-md-12 control-label" ><%= t(:company_name) %> </label>
+                      <div class="col-md-12">
+                        <%= f.text_field :company, class: "form-control", placeholder: "Company name..." %>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="col-md-12 control-label" ><%= t(:certificate_of_business_registration_no) %> </label>
+                      <div class="col-md-12">
+                        <%= f.text_field :certificate_of_business_registration_no, class: "form-control", placeholder: "Certificate of business registration number (tax code)..." %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="col-md-12 control-label" ><%= t(:date_of_issue) %> </label>
+                      <div class="col-md-12">
+                        <%= f.text_field :date_of_issue, class: "form-control", placeholder: "Date of issue..." %>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="col-md-12 control-label" ><%= t(:place_of_issue) %> </label>
+                      <div class="col-md-12">
+                        <%= f.text_field :place_of_issue, class: "form-control", placeholder: "Place of issue..." %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="col-md-12 control-label" ><%= t(:phone_2) %> </label>
+                      <div class="col-md-12">
+                        <%= f.text_field :phone_2, class: "form-control", placeholder: "Telephone number 2..." %>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="col-md-12 control-label" ><%= t(:email_2) %> </label>
+                      <div class="col-md-12">
+                        <%= f.text_field :email_2, class: "form-control", placeholder: "Email address 2..." %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="col-md-12 control-label" ><%= t(:hotline_1) %> </label>
+                      <div class="col-md-12">
+                        <%= f.text_field :hotline_1, class: "form-control", placeholder: "Hotline number 1..." %>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="col-md-12 control-label" ><%= t(:hotline_2) %> </label>
+                      <div class="col-md-12">
+                        <%= f.text_field :hotline_2, class: "form-control", placeholder: "Hotline number 2..." %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label class="col-md-12 control-label" ><%= t(:fax) %> </label>
+                      <div class="col-md-12">
+                        <%= f.text_field :fax, class: "form-control", placeholder: "Fax number..." %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="col-md-12 control-label" ><%= t(:head_office) %> </label>
+                      <div class="col-md-12">
+                        <%= f.text_field :head_office, class: "form-control", placeholder: "Head office address..." %>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="col-md-12 control-label" ><%= t(:branch_office) %> </label>
+                      <div class="col-md-12">
+                        <%= f.text_field :branch_office, class: "form-control", placeholder: "Branch office address..." %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
           </div>
-        </div>
-        <div class="col-md-6">
-          <div class="form-group">
-            <label class="col-md-12 control-label" ><%= t(:last_name) %> </label>
-            <div class="col-md-12">
-              <%= f.text_field :last_name, class: "form-control", placeholder: "Last name..." %>
-            </div>
-          </div>
-        </div>
       </div>
-      
-      <div class="row">
-        <div class="col-md-6">
-          <div class="form-group">
-            <label class="col-md-12 control-label" ><%= t(:email) %> <span class='text-danger'>*</span></label>
-            <div class="col-md-12">
-              <%= f.text_field :email, class: "form-control required" %>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="form-group">
-            <label class="col-md-12 control-label" ><%= t(:phone) %> <span class='text-danger'>*</span></label>
-            <div class="col-md-12">
-              <%= f.text_field :phone, class: "form-control required" %>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="row">
-        <div class="col-md-12">
-          <div class="form-group">
-            <label class="col-md-12 control-label" ><%= t(:address) %> </label>
-            <div class="col-md-12">
-              <%= f.text_field :address, class: "form-control" %>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="row">
-        <div class="col-md-12">
-          <div class="form-group">
-            <label class="col-md-12 control-label" ><%= t(:company) %> </label>
-            <div class="col-md-12">
-              <%= f.text_field :company, class: "form-control" %>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="row">
-        <div class="col-md-12">
-          <div class="form-group">
-            <label class="col-md-12 control-label" ><%= t(:description) %> </label>
-            <div class="col-md-12">
-              <%= f.text_area :description, class: "form-control", style: "min-width:100%;max-width:100%" %>
-            </div>
-          </div>
-        </div>
-      </div>
-    
+      <br /> 
       <div class="text-right">
         <%= button_tag "#{t(:save)}<i class=\"icon-check position-right\"></i>".html_safe, class: "btn btn-primary"%>
-        <%= link_to "#{t(:cancel)}<i class=\"icon-cross3 position-right\"></i>".html_safe, naturesoft_contacts.admin_contacts_path, class: "btn btn-danger"%>
       </div>
         
     <% end %>
