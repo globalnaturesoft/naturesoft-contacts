@@ -1,7 +1,7 @@
 module Naturesoft
   module Contacts
     class ContactsController < Naturesoft::FrontendController
-      before_action :set_contact, only: [:send_message]
+      before_action :set_contact, only: [:contact, :send_message]
       
       def contact
         @body_class = "category-page"
