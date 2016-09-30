@@ -12,7 +12,7 @@ module Naturesoft
     
         # GET /contacts
         def index
-          @contacts = Contact.all.paginate(:page => params[:page], :per_page => 10)
+          @contacts = Contact.search(params).paginate(:page => params[:page], :per_page => 10)
         end
     
         # GET /contacts/1

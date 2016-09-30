@@ -53,6 +53,7 @@
           <% @contacts.each do |contact| %>
             <tr>
               <td class="kq_search">
+								<% if contact.company.present? %><%= contact.company %><br /><% end %>
                 <%= contact.display_name %>
               </td>
               <td class="kq_search">

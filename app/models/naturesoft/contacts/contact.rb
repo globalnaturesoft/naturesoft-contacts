@@ -4,14 +4,14 @@ module Naturesoft::Contacts
     
     def self.sort_by
       [
+        ["Created At","naturesoft_contacts_contacts.created_at"],
         ["Name","naturesoft_contacts_contacts.name"],
-        ["Created At","naturesoft_contacts_contacts.created_at"]
       ]
     end
     def self.sort_orders
       [
+        ["DESC","desc"],
         ["ASC","asc"],
-        ["DESC","desc"]
       ]
     end
     
@@ -26,7 +26,8 @@ module Naturesoft::Contacts
       #Search keyword filter
       if params[:keyword].present?
         params[:keyword].split(" ").each do |k|
-          records = records.where("LOWER(CONCAT(naturesoft_contacts_contacts.first_name,' ',naturesoft_contacts_contacts.last_name,' ',naturesoft_contacts_contacts.email,' ',naturesoft_contacts_contacts.phone,' ',naturesoft_contacts_contacts.message)) LIKE ?", "%#{k.strip.downcase}%") if k.strip.present?
+          records = records.where("LOWER(CONCAT(naturesoft_contacts_contacts.first_name,' ',naturesoft_contacts_contacts.last_name,' ',naturesoft_contacts_contacts.email
+																	,' ',naturesoft_contacts_contacts.phone,' ',naturesoft_contacts_contacts.message,' ',naturesoft_contacts_contacts.company,' ',naturesoft_contacts_contacts.address,' ',naturesoft_contacts_contacts.head_office,' ',naturesoft_contacts_contacts.branch_office)) LIKE ?", "%#{k.strip.downcase}%") if k.strip.present?
         end
       end
       
