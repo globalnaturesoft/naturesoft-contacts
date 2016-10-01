@@ -13,7 +13,7 @@ module Naturesoft
           @contact = Naturesoft::Contacts::Contact.new(contact_params)
           respond_to do |format|
             if @contact.save
-              Naturesoft::UserMailer.sending_email_contact(@contact, @contact_info).deliver_now
+              #Naturesoft::UserMailer.sending_email_contact(@contact, @contact_info).deliver_now
               format.html { redirect_to contacts_path, notice: 'Contact was successfully sended' }
             end
           end
