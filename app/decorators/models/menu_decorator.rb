@@ -1,4 +1,5 @@
-Naturesoft::Menus::Menu.class_eval do
+if Naturesoft::Core.available?("menus")
+  Naturesoft::Menus::Menu.class_eval do
     @contacts = {
       "contact" => {
         "label" => "Contact Page",
@@ -9,4 +10,5 @@ Naturesoft::Menus::Menu.class_eval do
         }
       }
     }
+  end
 end
