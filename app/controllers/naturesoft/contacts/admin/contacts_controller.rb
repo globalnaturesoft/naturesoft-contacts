@@ -7,7 +7,8 @@ module Naturesoft
         
         # add top breadcrumb
         def default_breadcrumb
-          add_breadcrumb "Partners", naturesoft_contacts.admin_contacts_path
+          add_breadcrumb "Contact", naturesoft_contacts.admin_contacts_path
+          add_breadcrumb "Contacts", naturesoft_contacts.admin_contacts_path
         end
     
         # GET /contacts
