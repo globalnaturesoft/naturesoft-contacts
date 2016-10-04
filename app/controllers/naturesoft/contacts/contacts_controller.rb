@@ -17,6 +17,7 @@ module Naturesoft
             @msg.to_contact_id = @contact_info.id
             respond_to do |format|
               if @msg.save
+                Naturesoft::Contacts::ContactMailer.sending_email_contact(@msg).deliver_now
                 format.html { redirect_to contacts_path, notice: 'Contact was successfully sended' }
               end
             end

@@ -1,0 +1,6 @@
+Hello <%= @msg.to_contact.first_name %> <%= @msg.to_contact.last_name %>, <br />
+You recently received a contact with the following content:
+<p>
+    - Email: <%= @msg.contact.email %><br>
+    - Message: <%= @msg.message %> <br>
+</p>
