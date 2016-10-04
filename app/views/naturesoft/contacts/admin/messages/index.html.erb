@@ -46,6 +46,7 @@
       <table class="table table-striped">
         <thead>
           <tr class="bg-teal-800">
+							<th><%= t(:contact) %></th>
               <th><%= t(:message) %></th>
               <th><%= t(:sent_date) %></th>
               <th><%= t(:status) %></th>
@@ -55,6 +56,7 @@
         <tbody>
           <% @messages.each do |item| %>
             <tr>
+							<td><%= item.contact.email %></td>
 							<td class="kq_search">
                 <%= item.subject %><br /><i><%= item.message %></i>
               </td>

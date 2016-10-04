@@ -43,8 +43,7 @@
               <th><%= t(:full_name) %></th>
               <th>Email/Phone</th>
               <th><%= t(:address) %></th>
-              <th><%= t(:message) %></th>
-              <th><%= t(:sent_date) %></th>
+              <th><%= t(:created_at) %></th>
               <th><%= t(:status) %></th>
               <th class="text-right"><%= t(:actions) %></th>
           </tr>
@@ -61,9 +60,6 @@
               </td>
 							<td class="kq_search">
                 <%= contact.address %>
-              </td>
-							<td class="kq_search">
-                <%= contact.subject %><br /><i><%= contact.message %></i>
               </td>
               <td><%= contact.created_at.strftime("%d/%m/%Y") %></td>
 							<td><%= display_status(contact.status) %></td>

@@ -14,7 +14,7 @@ module Naturesoft
           if @contact.save and params[:msg].present?
             @msg = Naturesoft::Contacts::Message.new(message_params)
             @msg.contact_id = @contact.id
-            @msg.contact_to_id = @contact_info.id
+            @msg.to_contact_id = @contact_info.id
             respond_to do |format|
               if @msg.save
                 format.html { redirect_to contacts_path, notice: 'Contact was successfully sended' }

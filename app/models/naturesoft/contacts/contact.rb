@@ -1,6 +1,8 @@
 module Naturesoft::Contacts
   class Contact < ApplicationRecord
   validates :email, :phone, presence: true
+  has_many :sent_messages, class_name: "Naturesoft::Contacts::Message", dependent: :destroy
+  has_many :received_messages, class_name: "Naturesoft::Contacts::Message", foreign_key: :to_contact_id, dependent: :destroy
     
     def self.sort_by
       [
