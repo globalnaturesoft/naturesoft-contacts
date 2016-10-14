@@ -27,7 +27,7 @@ module Naturesoft
       
       private
         def set_contact
-          @contact_info = Naturesoft::Contacts::Contact.find(params[:id])
+          @contact_info = params[:id].present? ? Naturesoft::Contacts::Contact.find(params[:id]) : nil
         end
         # Never trust parameters from the scary internet, only allow the white list through.
         def contact_params
