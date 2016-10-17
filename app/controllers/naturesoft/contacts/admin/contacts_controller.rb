@@ -7,7 +7,8 @@ module Naturesoft
         
         # add top breadcrumb
         def default_breadcrumb
-          add_breadcrumb "Partners", naturesoft_contacts.admin_contacts_path
+          add_breadcrumb "Contact", naturesoft_contacts.admin_contacts_path
+          add_breadcrumb "Contacts", naturesoft_contacts.admin_contacts_path
         end
     
         # GET /contacts
@@ -71,7 +72,7 @@ module Naturesoft
     
           # Only allow a trusted parameter "white list" through.
           def contact_params
-            params.fetch(:contact, {}).permit(:first_name, :last_name, :email, :phone, :address, :subject, :message, :description,
+            params.fetch(:contact, {}).permit(:first_name, :last_name, :email, :phone, :address, :description,
                                               :company, :certificate_of_business_registration_no, :date_of_issue, :place_of_issue,
                                               :phone_2, :email_2, :hotline_1, :hotline_2, :fax, :head_office, :branch_office)
           end

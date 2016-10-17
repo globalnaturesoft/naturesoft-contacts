@@ -5,5 +5,10 @@ Naturesoft::Contacts::Engine.routes.draw do
         get "select2"
       end
     end
+    resources :messages do
+      collection do
+        get "select2"
+      end
+    end
   end
 end

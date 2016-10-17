@@ -4,5 +4,8 @@
       <li<% if["naturesoft/contacts/admin/contacts"].include?(params[:controller]) %>class="active"<% end %>>
         <%= link_to 'Contacts', naturesoft_contacts.admin_contacts_path %>
       </li>
+      <li<% if["naturesoft/contacts/admin/messages"].include?(params[:controller]) %>class="active"<% end %>>
+        <%= link_to 'Messages', naturesoft_contacts.admin_messages_path %>
+      </li>
   </ul>
 </li>
