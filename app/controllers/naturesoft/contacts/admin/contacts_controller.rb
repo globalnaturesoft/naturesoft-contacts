@@ -59,6 +59,13 @@ module Naturesoft
           render text: "Contact was successfully destroyed."
         end
         
+        # DELETE /banners/delete?ids=1,2,3
+        def delete
+          @contacts = Contact.where(id: params[:ids].split(","))
+          @contacts.destroy_all
+          render text: 'Contact(s) was successfully destroyed.'
+        end
+        
         # GET /contacts/select2
         def select2
           render json: Contact.select2(params)

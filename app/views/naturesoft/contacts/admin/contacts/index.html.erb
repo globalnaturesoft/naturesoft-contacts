@@ -34,23 +34,45 @@
       </div>
   </div>
   
+	<div class="btn-group list_actions mb-10 hide">
+        <button type="button" class="btn btn-xs btn-info dropdown-toggle" data-toggle="dropdown">
+            Actions <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">											
+            <li>
+                <a href="" data-href="<%= naturesoft_contacts.delete_admin_contacts_path %>" data-confirm="Are you sure!" data-method="DELETE">
+                    <i class="icon-enter"></i> Delete
+                </a>
+            </li>            
+        </ul>
+    </div>
+	
   <!-- Basic datatable -->
   <div class="panel panel-flat">
     <div class="table-container">
       <table class="table table-striped">
         <thead>
           <tr class="bg-teal-800">
-              <th><%= t(:full_name) %></th>
-              <th>Email/Phone</th>
-              <th><%= t(:address) %></th>
-              <th><%= t(:created_at) %></th>
-              <th><%= t(:status) %></th>
-              <th class="text-right"><%= t(:actions) %></th>
+						<th width="1%" class="check_all_list">
+								<input type="checkbox" class="styled">
+						</th>
+						<th><%= t(:full_name) %></th>
+						<th>Email/Phone</th>
+						<th><%= t(:address) %></th>
+						<th><%= t(:created_at) %></th>
+						<th><%= t(:status) %></th>
+						<th class="text-right"><%= t(:actions) %></th>
           </tr>
         </thead>
         <tbody>
           <% @contacts.each do |contact| %>
             <tr>
+							<td width="1%" class="text-nowrap">
+								<input type="checkbox" class="node styled"
+									name="ids[]"
+									value="<%= contact.id %>"
+								/>
+							</td>
               <td class="kq_search">
 								<% if contact.company.present? %><%= contact.company %><br /><% end %>
                 <%= contact.display_name %>

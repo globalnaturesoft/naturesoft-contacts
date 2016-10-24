@@ -3,6 +3,7 @@ Naturesoft::Contacts::Engine.routes.draw do
     resources :contacts do
       collection do
         get "select2"
+        delete 'delete'
       end
     end
     resources :messages do
