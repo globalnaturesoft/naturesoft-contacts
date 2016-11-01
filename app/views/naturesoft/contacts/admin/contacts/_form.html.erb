@@ -163,11 +163,19 @@
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col-md-12">
+                  <div class="col-md-6">
                     <div class="form-group">
                       <label class="col-md-12 control-label" ><%= t(:fax) %> </label>
                       <div class="col-md-12">
                         <%= f.text_field :fax, class: "form-control", placeholder: "Fax number..." %>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="col-md-12 control-label" ><%= t(:agent) %> </label>
+                      <div class="col-md-12">
+                        <%= f.text_field :agent, class: "form-control", placeholder: "Agent name..." %>
                       </div>
                     </div>
                   </div>
