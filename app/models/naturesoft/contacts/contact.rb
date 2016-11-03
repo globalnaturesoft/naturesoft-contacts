@@ -70,6 +70,10 @@ module Naturesoft::Contacts
 			options += items.map { |c| {"id" => c.id, "text" => c.display_contact_name} }
 			result = {"items" => options}
 		end
+		
+		def get_working_times
+			working_time.to_s.split("\r\n").select {|c| c.present? }
+		end
     
   end
 end
