@@ -1,14 +1,14 @@
 module Naturesoft
   module Contacts
-    module Admin
-      class ContactsController < Naturesoft::Admin::AdminController
+    module Backend
+      class ContactsController < Naturesoft::Backend::BackendController
         before_action :set_contact, only: [:show, :edit, :update, :destroy]
         before_action :default_breadcrumb
         
         # add top breadcrumb
         def default_breadcrumb
-          add_breadcrumb "Contact", naturesoft_contacts.admin_contacts_path
-          add_breadcrumb "Contacts", naturesoft_contacts.admin_contacts_path
+          add_breadcrumb "Contact", naturesoft_contacts.backend_contacts_path
+          add_breadcrumb "Contacts", naturesoft_contacts.backend_contacts_path
         end
     
         # GET /contacts
@@ -18,7 +18,7 @@ module Naturesoft
     
         # GET /contacts/1
         def show
-          add_breadcrumb @contact.email, naturesoft_contacts.new_admin_contact_path
+          add_breadcrumb @contact.email, naturesoft_contacts.new_backend_contact_path
           add_breadcrumb "Show"
         end
     
@@ -38,7 +38,7 @@ module Naturesoft
           @contact = Contact.new(contact_params)
     
           if @contact.save
-            redirect_to admin_contacts_path, notice: 'Contact was successfully created.'
+            redirect_to backend_contacts_path, notice: 'Contact was successfully created.'
           else
             render :new
           end
@@ -47,7 +47,7 @@ module Naturesoft
         # PATCH/PUT /contacts/1
         def update
           if @contact.update(contact_params)
-            redirect_to admin_contacts_path, notice: 'Contact was successfully updated.'
+            redirect_to backend_contacts_path, notice: 'Contact was successfully updated.'
           else
             render :edit
           end

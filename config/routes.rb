@@ -1,5 +1,5 @@
 Naturesoft::Contacts::Engine.routes.draw do
-  namespace :admin, module: "admin", path: "admin/contacts" do
+  namespace :backend, module: "backend", path: "backend/contacts" do
     resources :contacts do
       collection do
         get "select2"

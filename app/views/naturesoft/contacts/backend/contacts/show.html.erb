@@ -1,8 +1,8 @@
 <% title "#{@contact.email}" %>
 
 <div class="page_actions">
-    <%= link_to "#{t(:back)}<i class=\"icon-arrow-left16 position-right\"></i>".html_safe, naturesoft_contacts.admin_contacts_path, class: "btn btn-primary"%>
-    <%= link_to ("#{t(:Edit_contact)}" + '<i class="icon-pencil position-right"></i>').html_safe, naturesoft_contacts.edit_admin_contact_path(@contact), class: 'btn btn-primary' %>
+    <%= link_to "#{t(:back)}<i class=\"icon-arrow-left16 position-right\"></i>".html_safe, naturesoft_contacts.backend_contacts_path, class: "btn btn-primary"%>
+    <%= link_to ("#{t(:Edit_contact)}" + '<i class="icon-pencil position-right"></i>').html_safe, naturesoft_contacts.edit_backend_contact_path(@contact), class: 'btn btn-primary' %>
 </div>
 <br />
 <form action="#" class="form-horizontal">

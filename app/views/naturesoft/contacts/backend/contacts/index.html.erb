@@ -1,7 +1,7 @@
 <% title "Contacts" %>
 
 <div class="page_actions">
-    <%= link_to ("#{t(:new_contact)}" + '<i class="icon-plus22 position-right"></i>').html_safe, naturesoft_contacts.new_admin_contact_path, class: 'btn btn-primary' %>
+    <%= link_to ("#{t(:new_contact)}" + '<i class="icon-plus22 position-right"></i>').html_safe, naturesoft_contacts.new_backend_contact_path, class: 'btn btn-primary' %>
 </div>
 <br />
 <form class="listing-form">
@@ -40,7 +40,7 @@
         </button>
         <ul class="dropdown-menu">											
             <li>
-                <a href="" data-href="<%= naturesoft_contacts.delete_admin_contacts_path %>" data-confirm="Are you sure!" data-method="DELETE">
+                <a href="" data-href="<%= naturesoft_contacts.delete_backend_contacts_path %>" data-confirm="Are you sure!" data-method="DELETE">
                     <i class="icon-enter"></i> Delete
                 </a>
             </li>            
@@ -87,15 +87,15 @@
 							<td><%= display_status(contact.status) %></td>
               <td class="text-right">
                 <div class="btn-group">
-									<%= link_to '<i class="icon-point-right"></i>'.html_safe, naturesoft_contacts.admin_contact_path(contact), class: "btn bg-teal-400 btn-icon", title: "View detail" %>
+									<%= link_to '<i class="icon-point-right"></i>'.html_safe, naturesoft_contacts.backend_contact_path(contact), class: "btn bg-teal-400 btn-icon", title: "View detail" %>
                   <button type="button" class="btn bg-teal-400 dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
                   <ul class="dropdown-menu dropdown-menu-right">
 										<li>
-											<%= link_to '<i class="icon-pencil"></i>'.html_safe + t(:edit), naturesoft_contacts.edit_admin_contact_path(contact), title: "Edit Contact" %>
+											<%= link_to '<i class="icon-pencil"></i>'.html_safe + t(:edit), naturesoft_contacts.edit_backend_contact_path(contact), title: "Edit Contact" %>
 										</li>
 										<li class="divider"></li>
 										<li>
-											<%= link_to '<i class="glyphicon glyphicon-trash"></i>'.html_safe + t(:delete), naturesoft_contacts.admin_contact_path(contact), method: :delete, data: { confirm: 'Are you sure?' } , class: "backend_delete_item" %>
+											<%= link_to '<i class="glyphicon glyphicon-trash"></i>'.html_safe + t(:delete), naturesoft_contacts.backend_contact_path(contact), method: :delete, data: { confirm: 'Are you sure?' } , class: "backend_delete_item" %>
 										</li>
 									</ul>
 								</div>

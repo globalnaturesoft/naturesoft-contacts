@@ -1,14 +1,14 @@
 module Naturesoft
   module Contacts
-    module Admin
-      class MessagesController < Naturesoft::Admin::AdminController
+    module Backend
+      class MessagesController < Naturesoft::Backend::BackendController
         before_action :set_message, only: [:show, :edit, :update, :destroy]
         before_action :default_breadcrumb
         
         # add top breadcrumb
         def default_breadcrumb
-          add_breadcrumb "Contact", naturesoft_contacts.admin_contacts_path
-          add_breadcrumb "Messages", naturesoft_contacts.admin_messages_path
+          add_breadcrumb "Contact", naturesoft_contacts.backend_contacts_path
+          add_breadcrumb "Messages", naturesoft_contacts.backend_messages_path
         end
     
         # GET /messages
